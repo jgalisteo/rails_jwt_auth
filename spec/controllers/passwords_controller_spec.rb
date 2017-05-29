@@ -97,6 +97,7 @@ describe RailsJwtAuth::PasswordsController do
 
         context 'when does not send reset_password_token' do
           before do
+            user.update_attributes(reset_password_token: nil)
             put :update
           end
 
